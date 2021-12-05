@@ -1,0 +1,24 @@
+config:
+  credentials_id: Rakuten-mon
+
+remote_groups:
+  r_group_1:
+    - name: ubuntu
+      host: 172.22.209.10
+      
+command_groups:
+  c_group_1:
+    - commands:
+        - 'ls -lrt'
+        - 'whoami'
+
+steps:
+  deploy:
+    - remote_groups:
+        - r_group_1
+      command_groups:
+        - c_group_1
+    - remote_groups:
+        - r_group_1
+      command_groups:
+        - c_group_1
